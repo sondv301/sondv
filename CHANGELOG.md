@@ -8,3 +8,6 @@
 ## 0.0.2
 * Add Message Dialog
 
+## 0.0.3
+* Update README.md
+

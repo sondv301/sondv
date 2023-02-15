@@ -1,7 +1,7 @@
 name: sondv
 description: Package includes utilities during working at my company
-version: 0.0.1+1
-homepage: https://sondv301.github.io/
+version: 0.0.3
+homepage: https://sondv.dev/
 repository: https://github.com/sondv301/sondv
 
 environment:

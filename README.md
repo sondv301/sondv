@@ -7,7 +7,7 @@ Package includes utilities during working at my company
 ### Depend on it
 ```dart
 dependencies:
-  sondv: ^0.0.3
+  sondv: any
 ```
 #### Widgets
 ``` 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProcessingWidget extends StatelessWidget {
+class _ProcessingWidget extends StatelessWidget {
   final String message;
   final Widget? icon;
   final TextStyle? messageStyle;
@@ -9,7 +9,7 @@ class ProcessingWidget extends StatelessWidget {
   final double? borderRadiusValue;
   final double? width;
   final double? height;
-  const ProcessingWidget({
+  const _ProcessingWidget({
     Key? key,
     this.message = "Processing",
     this.icon,
@@ -32,10 +32,10 @@ class ProcessingWidget extends StatelessWidget {
             height: height,
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-                color:
-                    backgroundColor ?? const Color(0xfff2f2f2).withOpacity(0.8),
+                color: backgroundColor ?? const Color(0xfff2f2f2).withOpacity(0.8),
                 borderRadius: BorderRadius.circular(borderRadiusValue ?? 14)),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 icon ?? const CupertinoActivityIndicator(),
@@ -54,12 +54,11 @@ class ProcessingWidget extends StatelessWidget {
   }
 }
 
-void showProcessingDialog(BuildContext context,
-    {String message = "Processing"}) {
+void showProcessingDialogSDV(BuildContext context, {String message = "Processing"}) {
   showDialog(
     context: context,
     useRootNavigator: false,
     barrierDismissible: false,
-    builder: (context) => ProcessingWidget(message: message),
+    builder: (context) => _ProcessingWidget(message: message),
   );
 }

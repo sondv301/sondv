@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ConfirmInputDialog extends StatelessWidget {
+class _ConfirmInputDialog extends StatelessWidget {
   final String title;
   final String? message;
   final String hintText;
@@ -16,7 +16,7 @@ class ConfirmInputDialog extends StatelessWidget {
   final Color textColorCancel;
   final Color backgroundColorConfirm;
   final Color textColorConfirm;
-  const ConfirmInputDialog({
+  const _ConfirmInputDialog({
     Key? key,
     this.textAction = "Xác nhận",
     this.title = "Input",
@@ -26,7 +26,7 @@ class ConfirmInputDialog extends StatelessWidget {
     this.labelInput,
     this.maxLineInput,
     this.textColorConfirm = Colors.white,
-    this.backgroundColorConfirm = Colors.green,
+    this.backgroundColorConfirm = const Color(0xFF1976D2),
     this.textColorCancel = Colors.black,
     this.backgroundColorCancel = Colors.grey,
     this.titleStyle,
@@ -51,9 +51,7 @@ class ConfirmInputDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            message == null
-                ? Container()
-                : Text(message ?? "", style: contentStyle),
+            message == null ? Container() : Text(message ?? "", style: contentStyle),
             TextField(
               controller: ctrlInput,
               maxLines: maxLineInput,
@@ -101,7 +99,7 @@ class ConfirmInputDialog extends StatelessWidget {
   }
 }
 
-Future<String?> showConfirmInputDialog(
+Future<String?> showConfirmInputDialogSDV(
   BuildContext context, {
   String title = "Input",
   String hintText = "Input",
@@ -118,14 +116,14 @@ Future<String?> showConfirmInputDialog(
   double borderRadiusValue = 12,
   Color backgroundColorCancel = Colors.grey,
   Color textColorCancel = Colors.black,
-  Color backgroundColorConfirm = Colors.green,
+  Color backgroundColorConfirm = const Color(0xFF1976D2),
   Color textColorConfirm = Colors.white,
 }) async {
   var result = await showDialog(
     context: context,
     useRootNavigator: useRootNavigator,
     barrierDismissible: barrierDismissible,
-    builder: (context) => ConfirmInputDialog(
+    builder: (context) => _ConfirmInputDialog(
       title: title,
       hintText: hintText,
       textAction: textAction,

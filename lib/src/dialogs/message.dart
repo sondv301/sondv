@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void showMessageDialog(
+void showMessageDialogSDV(
   BuildContext context, {
   String title = "Notification",
   String message = "Message",
@@ -10,7 +10,7 @@ void showMessageDialog(
   TextStyle? titleStyle,
   TextStyle? contentStyle,
   double borderRadiusValue = 12,
-  Color backgroundColorConfirm = Colors.green,
+  Color backgroundColorConfirm = const Color(0xFF1976D2),
   Color textColorConfirm = Colors.white,
 }) {
   showDialog(
@@ -26,16 +26,14 @@ void showMessageDialog(
         message,
         style: contentStyle,
       ),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadiusValue)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadiusValue)),
       actionsAlignment: MainAxisAlignment.center,
       actions: [
         MaterialButton(
           onPressed: () => Navigator.pop(context),
           color: backgroundColorConfirm,
           textColor: Colors.white,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadiusValue)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadiusValue)),
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Text(textAction),

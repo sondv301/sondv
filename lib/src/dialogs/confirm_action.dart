@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Future<bool> showConfirmAction(
+Future<bool> showConfirmActionSDV(
   BuildContext context, {
   String title = "Confirm",
   String message = "message",
@@ -14,7 +14,7 @@ Future<bool> showConfirmAction(
   double borderRadiusValue = 12,
   Color backgroundColorCancel = Colors.grey,
   Color textColorCancel = Colors.black,
-  Color backgroundColorConfirm = Colors.green,
+  Color backgroundColorConfirm = const Color(0xFF1976D2),
   Color textColorConfirm = Colors.white,
 }) async {
   var result = await showDialog(
@@ -34,9 +34,7 @@ Future<bool> showConfirmAction(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadiusValue),
           ),
-          actionsAlignment: notCancel
-              ? MainAxisAlignment.center
-              : MainAxisAlignment.spaceEvenly,
+          actionsAlignment: notCancel ? MainAxisAlignment.center : MainAxisAlignment.spaceEvenly,
           actions: [
             if (notCancel == false)
               MaterialButton(
